@@ -18,3 +18,5 @@ class BaseAction:
 
     def is_displayed(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).is_displayed()
+    
+    
