@@ -1,5 +1,5 @@
 import pytest
-from actions.AddVisitorActions import AddvisiorActions
+from actions.add_visitor_actions import AddvisiorActions
 from utilities import csvreader
 
 
