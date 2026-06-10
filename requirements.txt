@@ -5,3 +5,4 @@ pytest-html
 allure-pytest
 openpyxl
 selenium-page-factory
+pytest-rerunfailures
