@@ -1,4 +1,4 @@
-# 🐍 Python Automation Project
+# Python Automation Project
 
 ## 🚀 End-to-End Web Automation Framework
 
