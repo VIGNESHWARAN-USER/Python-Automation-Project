@@ -2,6 +2,7 @@ import pytest
 from actions.login_action import LoginAction
 from actions.OPD_Search_Action import OPDSearchActions
 
+@pytest.mark.jerishwin
 @pytest.mark.usefixtures("setup_and_teardown")
 class TestOPDSearch:
 
