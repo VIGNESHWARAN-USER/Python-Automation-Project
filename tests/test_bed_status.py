@@ -1,0 +1,26 @@
+import pytest
+from actions.appointment_bed_status_action import bedstatusaction
+from actions.login_action import LoginAction
+
+
+@pytest.mark.usefixtures("setup_and_teardown")
+class Testbedstatus:
+
+    def test_bedstatus(self):
+
+        bedsts = bedstatusaction(self.driver)
+        baseact = LoginAction(self.driver)
+        try:
+            baseact.click_login("Receptionist")
+            baseact.click_login_button()
+            bedsts.clck_appointment()
+            bedsts.clk_bedstatus()
+            bedsts.clk_patient()
+
+            assert bedsts.pateint_det_visible(), "Patient details are not displayed"
+
+        except Exception as e:
+
+            bedsts.take_screenshot("bed_status_failure")
+
+            pytest.fail(f"Bed Status Test Failed. Error: {str(e)}")
