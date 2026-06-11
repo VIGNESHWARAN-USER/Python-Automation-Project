@@ -3,7 +3,7 @@ from actions.add_visitor_actions import AddvisiorActions
 from utilities import csvreader
 
 
-@pytest.mark.usefixtures("setup_teardown")
+@pytest.mark.usefixtures("setup_and_teardown")
 @pytest.mark.parametrize(
     "name,phone,idcard,noofperson,note", csvreader.get_data("addvisitordata.csv")
 )
