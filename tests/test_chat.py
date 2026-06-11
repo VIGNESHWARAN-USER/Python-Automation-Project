@@ -2,6 +2,7 @@ import pytest
 from actions.chat_appointment_action import Chataction
 from actions.login_action import LoginAction
 
+@pytest.mark.muhindhar
 @pytest.mark.usefixtures("setup_and_teardown")
 class TestChatAppointment:
     def test_chatappointment(self):
