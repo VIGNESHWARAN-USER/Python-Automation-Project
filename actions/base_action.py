@@ -21,9 +21,7 @@ class BaseAction:
         return self.wait.until(EC.visibility_of_element_located(locator)).text
 
     def get_attribute(self, locator, attribute):
-        return self.wait.until(EC.visibility_of_element_located(locator)).get_attribute(
-            attribute
-        )
+        return self.wait.until(EC.visibility_of_element_located(locator)).get_attribute(attribute)
 
     def is_displayed(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).is_displayed()
@@ -102,9 +100,7 @@ class BaseAction:
 
     def drag_and_drop(self, source_locator, target_locator):
         source = self.wait.until(EC.visibility_of_element_located(source_locator))
-
         target = self.wait.until(EC.visibility_of_element_located(target_locator))
-
         ActionChains(self.driver).drag_and_drop(source, target).perform()
 
 
