@@ -4,7 +4,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from utilities.config_reader import get_value
 
-
+@pytest.mark.muhindhar
+@pytest.mark.vigneshwaran
+@pytest.mark.jerishwin
 @pytest.fixture()
 def setup_and_teardown(request):
 
@@ -14,7 +16,7 @@ def setup_and_teardown(request):
 
         options = Options()
 
-        #options.add_argument("--headless=new")
+        options.add_argument("--headless=new")
         options.add_argument("--window-size=1920,1080")
         options.add_argument("--disable-notifications")
         options.add_argument("--disable-popup-blocking")
