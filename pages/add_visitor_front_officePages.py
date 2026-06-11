@@ -9,7 +9,7 @@ class AddVisitor:
     name = (By.XPATH,"//form[@id='formadd']//input[@name='name']")
     phone = (By.XPATH,"//form[@id='formadd']//input[@name='contact']")
     idcard = (By.XPATH,"//form[@id='formadd']//input[@name='id_proof']")
-    noofperson = (By.XPATH,"//input[@fdprocessedid='qrrtqp']")
+    noofperson = (By.XPATH,"//form[@id='formadd']//input[@name='pepples']")
     note = (By.XPATH,"//textarea[@id='description']")
     savebtn = (By.XPATH,"//button[@id='formaddbtn']")
     visitorlist = (By.XPATH,"//h3[text()='Visitor List']/parent::div") 
