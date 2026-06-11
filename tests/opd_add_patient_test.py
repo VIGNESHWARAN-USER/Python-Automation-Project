@@ -10,7 +10,7 @@ from actions.OPD_AddPatient_Action import OPDAddPatientActions
 class TestOPDAddPatient:
 
     FILE_NAME  = "OPDTestData.xlsx"
-    SHEET_NAME = "Sheet1"          # ← update to your actual sheet name
+    SHEET_NAME = "Sheet1"
 
     def _login(self):
         login = LoginAction(self.driver)
@@ -31,10 +31,10 @@ class TestOPDAddPatient:
         self._login()
         apa = OPDAddPatientActions(self.driver)
 
-        apa.navigate_to_opd_page()          # ← sidebar click
-        apa.click_add_patient_button()      # ← tab_2 button
-        apa.click_add_icon()                # ← modal add icon
-        apa.fill_patient_form_from_excel()  # ← rows[0] from Excel
+        apa.navigate_to_opd_page()          
+        apa.click_add_patient_button()      
+        apa.click_add_icon()                
+        apa.fill_patient_form_from_excel()  
         apa.click_save()
 
         assert apa.is_success_message_displayed(), \
@@ -43,7 +43,7 @@ class TestOPDAddPatient:
     def test_add_patient_without_name_shows_error(self):
         self._login()
         apa  = OPDAddPatientActions(self.driver)
-        data = self._get_row_as_dict(row_index=1)   # rows[1] — Name is empty
+        data = self._get_row_as_dict(row_index=1)   
         print(f"Test Data: {data}")
 
         apa.navigate_to_opd_page()
