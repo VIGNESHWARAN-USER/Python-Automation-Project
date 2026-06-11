@@ -5,22 +5,23 @@ from actions.login_action import LoginAction
 
 
 @pytest.mark.usefixtures("setup_and_teardown")
-@pytest.mark.parametrize(
-    "name,phone,idcard,noofperson,note", csvreader.get_data("addvisitordata.csv")
-)
+@pytest.mark.parametrize("name,phone,idcard,noofperson,note", csvreader.get_data("addvisitordata.csv"))
 class TestAddVisitor:
 
     def test_addvisitor(self, name, phone, idcard, noofperson, note):
 
-        adv = AddvisiorActions(self.driver)
-        la = LoginAction(self.driver)
-        la.click_login("Receptionist")
-        la.click_login_button()
-        
-        adv.clck_frontofc()
+        try:
+            la = LoginAction(self.driver)
+            adv = AddvisiorActions(self.driver)
 
-        adv.add_inp(name, phone, idcard, noofperson, note)
+            la.click_login("Receptionist")
+            la.click_login_button()
 
-        adv.clk_savebtn()
+            adv.clck_frontofc()
+            adv.add_inp(name, phone, idcard, noofperson, note)
 
-        assert adv.check_list()
+            adv.clk_savebtn()
+
+            assert (adv.check_list()), f"Visitor List is not displayed after adding visitor: {name}"
+        except Exception as e:
+            pytest.fail(f"Test failed for visitor '{name}'. Error: {str(e)}")
