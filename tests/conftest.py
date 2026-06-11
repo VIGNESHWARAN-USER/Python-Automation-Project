@@ -56,8 +56,6 @@ def setup_and_teardown(request):
     else:
         raise ValueError(f"Unsupported browser: {browser}")
 
-    driver.implicitly_wait(20)
-
     driver.get(
         get_value(
             "./configurations/config.ini",
