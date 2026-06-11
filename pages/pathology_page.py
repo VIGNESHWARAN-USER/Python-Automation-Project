@@ -2,12 +2,12 @@ from selenium.webdriver.common.by import By
 
 class PathalogyPage:
     
+    pathlogyMenu = (By.XPATH, "//a[normalize-space()='Pathology']")
     search = (By.XPATH, "//input[@type='search' or @placeholder='Search...']")
     filter = (By.XPATH, "//div[text()='Records: 1 to 1 of 1 (filtered from 14 total records)']")
     table = (By.XPATH, "//table//tr")
     notFound = (By.XPATH, "//tr[@class='odd']//td[text()='No matching records found']")
-    
-    #pay
+
     paybtn = (By.XPATH, "//td[contains(@class,'text-right')]//button[contains(@onclick,'payModal')]")
     payAmt = (By.XPATH, "//input[@id='amount_total_paid']")
     add = (By.XPATH, "//div[@class='modal-footer']//button[@id='pay_button']")
@@ -19,4 +19,10 @@ class PathalogyPage:
     verify = (By.XPATH, "//button[contains(normalize-space(),'Verify') or contains(normalize-space(),'Pay') or contains(normalize-space(),'verify')]")
     succ = (By.XPATH, "//div[@class='alert alert-success alert-dismissible']")
     payError = (By.XPATH, "//*[contains(text(),'Amount Should Not Be Greater Than Balance')] | " + "//*[contains(text(),'Invalid Amount')]")
-    frame = By.tagName("iframe")
+
+    def get_record_locator(self, billNo):
+        xpath = f"//tr/td[contains(text(), '{billNo}')]"
+        return (By.XPATH, xpath)
+    
+    def get_error_msg(self):
+        return self.notFound
