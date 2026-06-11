@@ -4,9 +4,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from utilities.config_reader import get_value
 
-@pytest.mark.muhindhar
-@pytest.mark.vigneshwaran
-@pytest.mark.jerishwin
 @pytest.fixture()
 def setup_and_teardown(request):
 

@@ -2,6 +2,7 @@ from actions.base_action import BaseAction
 from pages.calllog_front_office_page import CallLogPage
 from utilities.logger import get_logger
 import pytest
+from selenium.common.exceptions import StaleElementReferenceException
 
 logger = get_logger()
 
@@ -83,13 +84,21 @@ class CallLogFrontofcActions(BaseAction):
             pytest.fail(f"Unable to click save button. Error: {str(e)}")
 
     def checklist(self):
-        try:
-            logger.info("checking whether list is visible")
-            self.wait_for_visibility(self.cfp.checklist)
-            return self.get_text(self.cfp.checklist)
+            try:
+                logger.info("checking whether list is visible")
 
-        except Exception as e:
-            pytest.fail(f"Checklist not visible. Error: {str(e)}")
+                for _ in range(3):
+                    try:
+                        self.wait_for_visibility(self.cfp.checklist)
+                        return self.get_text(self.cfp.checklist)
+
+                    except StaleElementReferenceException:
+                        logger.warning("Retrying due to stale element")
+
+                pytest.fail("Checklist not visible after retries")
+
+            except Exception as e:
+                pytest.fail(f"Checklist not visible. Error: {str(e)}")
 
     def errorcheck(self):
         try:
