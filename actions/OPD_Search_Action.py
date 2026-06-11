@@ -21,32 +21,24 @@ class OPDSearchActions(BaseAction):
         self.send_keys(self.opd_page.search_box, patient_name)
 
     def navigate_to_opd_page(self):
-        self.wait.until(
-            EC.element_to_be_clickable(self.opd_page.opd_button)
-        )
+        self.wait.until(EC.element_to_be_clickable(self.opd_page.opd_button))
 
         logger.info("Clicking OPD button")
         self.js_click(self.opd_page.opd_button)
 
-        self.wait.until(
-            EC.element_to_be_clickable(self.opd_page.old_opd_tab)
-        )
+        self.wait.until(EC.element_to_be_clickable(self.opd_page.old_opd_tab))
 
         logger.info("Clicking Old OPD tab")
         self.js_click(self.opd_page.old_opd_tab)
 
     def verify_search_name_result(self):
-        self.wait.until(
-            EC.visibility_of_element_located(self.opd_page.patient_name)
-        )
+        self.wait.until(EC.visibility_of_element_located(self.opd_page.patient_name))
 
         logger.info("Getting patient name")
         return self.get_text(self.opd_page.patient_name)
 
     def verify_search_failed(self):
-        self.wait.until(
-            EC.visibility_of_element_located(self.opd_page.search_failed)
-        )
+        self.wait.until(EC.visibility_of_element_located(self.opd_page.search_failed))
 
         logger.info("Search failed")
         return self.get_text(self.opd_page.search_failed)
