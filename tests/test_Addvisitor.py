@@ -1,9 +1,10 @@
 import pytest
 from actions.add_visitor_actions import AddvisiorActions
 from utilities import csvreader
+from actions.login_action import LoginAction
 
 
-@pytest.mark.usefixtures("setup_teardown")
+@pytest.mark.usefixtures("setup_and_teardown")
 @pytest.mark.parametrize(
     "name,phone,idcard,noofperson,note", csvreader.get_data("addvisitordata.csv")
 )
@@ -12,9 +13,10 @@ class TestAddVisitor:
     def test_addvisitor(self, name, phone, idcard, noofperson, note):
 
         adv = AddvisiorActions(self.driver)
-
-        adv.clk_recpbtn()
-        adv.clk_signin()
+        la = LoginAction(self.driver)
+        la.click_login("Receptionist")
+        la.click_login_button()
+        
         adv.clck_frontofc()
 
         adv.add_inp(name, phone, idcard, noofperson, note)

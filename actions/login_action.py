@@ -93,3 +93,21 @@ class LoginAction(BaseAction):
             logger.error(f"Failed to get user role: {str(e)}")
             raise
 
+    def is_correct_user_logged_in(self, role):
+        return self.get_user_role() == role
+
+    def is_correct_error_message_displayed(self, message):
+        return self.get_invalid_error_message() == message
+
+    def is_username_error_message_displayed(self, message):
+        return message == self.get_username_error_message()
+
+    def is_password_error_message_displayed(self, message):
+            return message == self.get_password_error_message()
+
+    def is_validation_error_messages_displayed(self, messages):
+        for message in messages:
+            if message not in [self.get_password_error_message() ,self.get_username_error_message()]:
+                return False
+        return True
+    

@@ -1,33 +1,38 @@
-from selenium.webdriver.support.ui import Select
-from pages.add_visitor_frontOfficePages import AddVisitor
+from pages.add_visitor_front_officePages import AddVisitor
 from actions.base_action import BaseAction
 
 
-class AddvisiorActions(AddVisitor):
+class AddvisiorActions(BaseAction):
+
     def __init__(self, driver):
-        self.driver = driver
+        super().__init__(driver)
+        self.avp = AddVisitor()
+
         
     def clk_recpbtn(self):
-        self.driver.find_element(*self.recpbtn).click()
-        #self.click(self.avp.recpbtn)
+        self.click(self.avp.recpbtn)
+
     def clk_signin(self):
-        self.driver.find_element(*self.signinbtn).click()
-        #self.click(self.avp.signinbtn)
+        self.click(self.avp.signinbtn)
+        
+    
+
     def clck_frontofc(self):
-        self.driver.find_element(*self.frontoffice).click()
-        self.driver.find_element(*self.addvisitorbtn).click()
+        self.click(self.avp.frontoffice)
+        self.click(self.avp.addvisitorbtn)
+
     def add_inp(self, name, phone, idcard, noofperson, note):
-        element = self.driver.find_element(*self.purpose)
-        print("Displayed =", element.is_displayed())
-        print("Enabled =", element.is_enabled())
-        print("Tag =", element.tag_name)
-        Select(self.driver.find_element(*self.purpose)).select_by_visible_text("Visit")
-        self.driver.find_element(*self.name).send_keys(name)
-        self.driver.find_element(*self.phone).send_keys(phone)
-        self.driver.find_element(*self.idcard).send_keys(idcard)
-        self.driver.find_element(*self.noofperson).send_keys(noofperson)
-        self.driver.find_element(*self.note).send_keys(note)
+
+        self.select_by_text(self.avp.purpose, "Visit")
+
+        self.send_keys(self.avp.name, name)
+        self.send_keys(self.avp.phone, phone)
+        self.send_keys(self.avp.idcard, idcard)
+        self.send_keys(self.avp.noofperson, noofperson)
+        self.send_keys(self.avp.note, note)
+
     def clk_savebtn(self):
-        self.driver.find_element(*self.savebtn).click()
+        self.click(self.avp.savebtn)
+
     def check_list(self):
-        return self.driver.find_element(*self.visitorlist).is_displayed()
+        return self.is_displayed(self.avp.visitorlist)
