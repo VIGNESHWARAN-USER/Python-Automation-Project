@@ -16,11 +16,8 @@ class Testbedstatus:
             bedsts.clck_appointment()
             bedsts.clk_bedstatus()
             bedsts.clk_patient()
-
             assert bedsts.pateint_det_visible(), "Patient details are not displayed"
 
         except Exception as e:
-
             bedsts.take_screenshot("bed_status_failure")
-
             pytest.fail(f"Bed Status Test Failed. Error: {str(e)}")
