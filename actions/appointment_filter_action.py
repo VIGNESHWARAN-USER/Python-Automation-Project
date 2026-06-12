@@ -1,7 +1,7 @@
 from actions.base_action import BaseAction
 from pages.appointment_filter_pages import Apponintmentfilter
 from utilities.logger import get_logger
-
+from pages.sidebar_page import SideBarPage
 logger = get_logger()
 
 
@@ -10,6 +10,7 @@ class Appfilter(BaseAction):
     def __init__(self, driver):
         super().__init__(driver)
         self.filter = Apponintmentfilter()
+        self.avsb = SideBarPage()
 
     def clk_appointment(self):
         logger.info("Clicking Appointment tab")

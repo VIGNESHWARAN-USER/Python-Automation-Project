@@ -3,7 +3,7 @@ from pages.calllog_front_office_page import CallLogPage
 from utilities.logger import get_logger
 import pytest
 from selenium.common.exceptions import StaleElementReferenceException
-
+from pages.sidebar_page import SideBarPage
 logger = get_logger()
 
 class CallLogFrontofcActions(BaseAction):
@@ -11,6 +11,7 @@ class CallLogFrontofcActions(BaseAction):
     def __init__(self, driver):
         super().__init__(driver)
         self.cfp = CallLogPage()
+        self.avsb = SideBarPage()
 
     def clckrecp(self):
         try:
@@ -34,7 +35,8 @@ class CallLogFrontofcActions(BaseAction):
         try:
             logger.info("clicking front office link")
             self.wait_for_visibility(self.cfp.frontofc)
-            self.js_click(self.cfp.frontofc)
+            self.js_click(self.avsb.frontoffice)
+            #self.js_click(self.cfp.frontofc)
 
         except Exception as e:
             pytest.fail(f"Unable to click front office link. Error: {str(e)}")
