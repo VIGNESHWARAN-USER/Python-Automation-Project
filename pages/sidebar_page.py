@@ -16,4 +16,4 @@ class SideBarPage:
     pharmacy = (By.XPATH,"//li[contains(@class ,'treeview')][7]")
     pathology = (By.XPATH,"//li[contains(@class ,'treeview')][8]")
     messaging = (By.XPATH,"//li[contains(@class ,'treeview')][16]")
-    
+    inventory = (By.XPATH,"//a[@href='https://demo.smart-hospital.in/admin/itemstock']")

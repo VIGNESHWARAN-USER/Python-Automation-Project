@@ -34,9 +34,11 @@ class CallLogFrontofcActions(BaseAction):
     def frontofclink(self):
         try:
             logger.info("clicking front office link")
-            self.wait_for_visibility(self.cfp.frontofc)
-            self.js_click(self.avsb.frontoffice)
-            #self.js_click(self.cfp.frontofc)
+
+            self.wait_for_clickable(self.cfp.frontofc)
+            self.js_click(self.cfp.frontofc)
+
+            logger.info("Front Office clicked successfully")
 
         except Exception as e:
             pytest.fail(f"Unable to click front office link. Error: {str(e)}")
