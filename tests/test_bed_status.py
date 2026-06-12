@@ -2,7 +2,7 @@ import pytest
 from actions.appointment_bed_status_action import bedstatusaction
 from actions.login_action import LoginAction
 
-
+@pytest.mark.muhindhar
 @pytest.mark.usefixtures("setup_and_teardown")
 class Testbedstatus:
 

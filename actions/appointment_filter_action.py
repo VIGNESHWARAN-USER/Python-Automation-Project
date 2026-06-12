@@ -15,6 +15,10 @@ class Appfilter(BaseAction):
         logger.info("Clicking Appointment tab")
         self.click(self.filter.appointmentbtn)
 
+    def clk_today_app(self):
+        logger.info("Clicking Today Appointment tab")
+        self.click(self.filter.todayapp)
+
     def check_todayapp(self):
         logger.info("Verifying Today Appointment table")
         status = self.is_displayed(self.filter.todayapptable)

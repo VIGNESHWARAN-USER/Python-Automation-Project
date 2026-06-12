@@ -3,7 +3,7 @@ import utilities.excel_reader as excelreader
 from actions.call_log_action import CallLogFrontofcActions
 from actions.login_action import LoginAction
 
-
+@pytest.mark.muhindhar
 @pytest.mark.usefixtures("setup_and_teardown")
 @pytest.mark.parametrize("name,phone,description,calltype,note,duration",excelreader.get_data("CallLogData.xlsx", "Sheet1"),)
 class TestCallLog:

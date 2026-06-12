@@ -5,7 +5,7 @@ from utilities.excel_reader import get_data
 from actions.login_action import LoginAction
 from actions.OPD_AddPatient_Action import OPDAddPatientActions
 
-
+@pytest.mark.jerishwin
 @pytest.mark.usefixtures("setup_and_teardown")
 class TestOPDAddPatient:
 

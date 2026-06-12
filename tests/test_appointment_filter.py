@@ -2,7 +2,7 @@ import pytest
 from actions.appointment_filter_action import Appfilter
 from actions.login_action import LoginAction
 
-
+@pytest.mark.muhindhar
 @pytest.mark.usefixtures("setup_and_teardown")
 class Testfilter:
 

@@ -3,6 +3,7 @@ from utilities.excel_reader import get_data
 from actions.login_action import LoginAction
 from utilities.config_reader import get_value
 
+@pytest.mark.vigneshwaran
 @pytest.mark.usefixtures("setup_and_teardown")
 class TestLogin:
         
