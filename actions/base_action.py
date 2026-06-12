@@ -1,3 +1,5 @@
+from threading import local
+
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -23,8 +25,9 @@ class BaseAction:
         self.driver.execute_script("arguments[0].click();", self.driver.find_element(By.XPATH, locator[1]))
 
     def scroll_and_click(self, locator):
-        self.driver.execute_script("arguments[0].scrollIntoView();")
-        self.click(locator)
+        element = self.driver.find_element(*locator)
+        self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});",element)
+        self.driver.execute_script("arguments[0].click();",element)
 
     # Text Actions
     def send_keys(self, locator, value):

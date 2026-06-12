@@ -1,6 +1,8 @@
 from pages.add_visitor_front_officePages import AddVisitor
 from actions.base_action import BaseAction
 from utilities.logger import get_logger
+from pages.sidebar_page import SideBarPage
+from selenium.common.exceptions import StaleElementReferenceException
 
 logger = get_logger()
 class AddvisiorActions(BaseAction):
@@ -8,6 +10,7 @@ class AddvisiorActions(BaseAction):
     def __init__(self, driver):
         super().__init__(driver)
         self.avp = AddVisitor()
+        self.avsb = SideBarPage()
 
     def clk_recpbtn(self):
         logger.info("Clicking Receptionist")
@@ -19,7 +22,7 @@ class AddvisiorActions(BaseAction):
 
     def clck_frontofc(self):
         logger.info("Opening Front Office")
-        self.click(self.avp.frontoffice)
+        self.click(self.avsb.frontoffice)
 
         logger.info("Clicking Add Visitor")
         self.click(self.avp.addvisitorbtn)
@@ -50,6 +53,13 @@ class AddvisiorActions(BaseAction):
 
     def check_list(self):
         logger.info("Verifying Visitor List is displayed")
-        status = self.is_displayed(self.avp.visitorlist)
-        logger.info(f"Visitor List Displayed: {status}")
-        return status
+        try:
+            status = self.is_displayed(self.avp.visitorlist)
+            logger.info(f"Visitor List Displayed: {status}")
+            return status
+
+        except StaleElementReferenceException:
+                logger.warning("Stale element found while verifying visitor list. Retrying...")
+                status = self.is_displayed(self.avp.visitorlist)
+                logger.info(f"Visitor List Displayed After Retry: {status}")
+                return status

@@ -3,6 +3,7 @@ from pages.complaint_front_office import ComplaintFoPages
 from utilities.logger import get_logger
 import pytest
 from datetime import datetime
+from pages.sidebar_page import SideBarPage
 logger = get_logger()
 
 
@@ -11,6 +12,7 @@ class ComplaintActions(BaseAction):
     def __init__(self, driver):
         super().__init__(driver)
         self.cp = ComplaintFoPages()
+        self.avsb = SideBarPage()
 
     def clickrescp(self):
         try:
@@ -26,7 +28,8 @@ class ComplaintActions(BaseAction):
     def clkfo(self):
         try:
             logger.info("clicking front office button")
-            self.click(self.cp.frontofc)
+            #self.click(self.cp.frontofc)
+            self.click(self.avsb.frontoffice)
 
         except Exception as e:
             pytest.fail(f"Unable to click front office button. Error: {str(e)}")

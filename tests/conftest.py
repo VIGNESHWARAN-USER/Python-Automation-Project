@@ -4,7 +4,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from utilities.config_reader import get_value
 
-
 @pytest.fixture()
 def setup_and_teardown(request):
 
@@ -28,6 +27,11 @@ def setup_and_teardown(request):
         options.add_argument("--disable-gpu")
 
         download_path = os.path.join(os.getcwd(), "downloads")
+        print(f"Download Path: {download_path}")
+
+        if not os.path.exists(download_path):
+            os.makedirs(download_path)
+
 
         prefs = {
             "profile.default_content_setting_values.notifications": 2,

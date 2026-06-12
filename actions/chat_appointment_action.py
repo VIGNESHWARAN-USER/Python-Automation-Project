@@ -1,12 +1,13 @@
-
 from actions.base_action import BaseAction
 from pages.chat_appointment_pages import Chatpage
 from utilities.logger import get_logger
+from pages.sidebar_page import SideBarPage
 logger = get_logger()
 class Chataction(BaseAction):
     def __init__(self, driver):
         super().__init__(driver)
         self.cap = Chatpage()
+        self.avsb = SideBarPage()
     
     def clickrecp(self):
         logger.info("clicking receptionist")
@@ -18,7 +19,8 @@ class Chataction(BaseAction):
 
     def clickappointment(self):
         logger.info("clicking appointment section")
-        self.click(self.cap.appbtn)
+        self.click(self.avsb.appointmentbtn)
+        #self.click(self.cap.appbtn)
 
     def clickchaticon(self):
         logger.info("clicking chat icon")
