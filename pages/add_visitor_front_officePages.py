@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from pages.sidebar_page import SideBarPage
+
 
 class AddVisitor:
     recpbtn = (By.XPATH,"//a[normalize-space()='Receptionist']")
