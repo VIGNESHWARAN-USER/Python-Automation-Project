@@ -9,8 +9,8 @@ class ProfileAction(BaseAction):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.dp = DashboardPage(driver)
-        self.pp = ProfilePage(driver)
+        self.dp = DashboardPage()
+        self.pp = ProfilePage()
 
     def click_profile_icon(self):
         logger.info("Clicking profile icon")
