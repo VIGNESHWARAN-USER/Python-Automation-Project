@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 from datetime import datetime
 import os
@@ -22,6 +23,12 @@ class BaseAction:
     # Text Actions
     def send_keys(self, locator, value):
         self.wait.until(EC.visibility_of_element_located(locator)).send_keys(value)
+
+    def send_keys_and_enter(self, locator, value):
+        element = self.wait.until(EC.visibility_of_element_located(locator))
+        element.send_keys(value)
+        element.send_keys(Keys.ENTER)
+
 
     def clear(self, locator):
         self.wait.until(EC.visibility_of_element_located(locator)).clear()
@@ -100,3 +107,9 @@ class BaseAction:
         element = self.wait.until(EC.visibility_of_element_located(locator))
 
         ActionChains(self.driver).context_click(element).perform()
+
+    def get_element(self, locator):
+        return self.wait.until(EC.visibility_of_element_located(locator))
+
+    def get_elements(self, locator):
+        return self.wait.until(EC.visibility_of_all_elements_located(locator))

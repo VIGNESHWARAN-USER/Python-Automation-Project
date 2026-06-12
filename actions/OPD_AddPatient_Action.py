@@ -19,14 +19,10 @@ class OPDAddPatientActions:
         self.opd_page = OPDPage(driver)
         self.wait     = WebDriverWait(driver, 15)
 
-    # ── Navigation ───────────────────────────────────────────────────────────
-
     def navigate_to_opd_page(self):
         self.wait.until(EC.element_to_be_clickable(self.opd_page.opd_button))
         self.driver.find_element(*self.opd_page.opd_button).click()
         logger.info("Clicked OPD sidebar button")
-
-    # ── Clicks ───────────────────────────────────────────────────────────────
 
     def click_add_patient_button(self):
         self.wait.until(EC.element_to_be_clickable(self.opd_page.add_patient_button))
@@ -42,8 +38,6 @@ class OPDAddPatientActions:
         self.wait.until(EC.element_to_be_clickable(self.opd_page.save_button))
         self.driver.find_element(*self.opd_page.save_button).click()
         logger.info("Clicked Save button")
-
-    # ── Form Filling ─────────────────────────────────────────────────────────
 
     def fill_patient_form(self, data: dict):
         name   = data.get("Name")
@@ -85,8 +79,6 @@ class OPDAddPatientActions:
         }
         print(f"Excel Data Loaded: {data}")
         self.fill_patient_form(data)
-
-    # ── Verifications ─────────────────────────────────────────────────────────
 
     def is_success_message_displayed(self) -> bool:
         try:
