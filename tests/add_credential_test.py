@@ -14,13 +14,14 @@ class TestAddCredentials:
         self.la = LoginAction(self.driver)
         self.la.click_login("Doctor")
         self.la.click_login_button()
-        self.ca.click_live_consultation_option()
         self.ca.click_live_consultation_dropdown()
+        self.ca.click_live_consultation_option()
         self.ca.click_add_credential_button()
 
     def test__with_valid_credentials(self):
-        self.ca.enter_zoom_api_key(get_value("./data-files/consultation_data.ini", "data set", "key"))
-        self.ca.enter_zoom_api_secret(get_value("./data-files/consultation_data.ini", "data set", "secret"))
+        self.ca.clear_credential_fields()
+        self.ca.enter_zoom_api_key(get_value("./data_files/consultation_data.ini", "data set", "key"))
+        self.ca.enter_zoom_api_secret(get_value("./data_files/consultation_data.ini", "data set", "secret"))
         self.ca.click_save_credential_button()
         assert self.ca.is_credentials_added(), "Cannot add credentials"
 
@@ -38,3 +39,5 @@ class TestAddCredentials:
         assert "required" in actual_message, (
             f"Validation message mismatch. Actual: {actual_message}"
         )
+
+    
