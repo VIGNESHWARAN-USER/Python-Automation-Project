@@ -1,7 +1,7 @@
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-
+from utilities.config_reader import get_value
 from actions.base_action import BaseAction
 from pages.join_consultation_page import JoinConsultationPage
 from pages.sidebar_page import SideBarPage
@@ -163,6 +163,9 @@ class JoinConsultationAction(BaseAction):
         return self.get_text(
             self.jp.success_toast_message
         )
+
+    def is_credentials_added(self):
+        return get_value("./data_files/consultation_data", "data set", "success_message") == self.get_toast_message()
 
     def get_zoom_api_key_value(self):
         return self.get_element(
