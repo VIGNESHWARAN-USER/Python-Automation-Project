@@ -46,6 +46,7 @@ def setup_and_teardown(request):
         options.add_experimental_option("prefs", prefs)
 
         driver = webdriver.Chrome(options=options)
+        driver.implicitly_wait(10)
 
     elif browser == "edge":
         driver = webdriver.Edge()
