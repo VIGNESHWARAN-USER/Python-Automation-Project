@@ -58,12 +58,19 @@ class TestInventory:
     def test_inventory_pdf_download(self):
         login = LoginAction(self.driver)
         inva = Inventoryaction(self.driver)
+        
+
         try:
-            clear_downloads()
-            login.click_login("Receptionist")
-            login.click_login_button()
-            inva.clk_inventory()
-            inva.clck_pdf()
-            assert is_file_downloaded(".pdf"), "PDF file was not downloaded"
+                clear_downloads()
+                login.click_login("Receptionist")
+                login.click_login_button()
+
+                inva.clk_inventory()
+                inva.clck_pdf()
+
+                pdf_status = is_file_downloaded(".pdf")
+
+                assert pdf_status is True, "PDF file was not downloaded"
+
         except Exception as e:
-            pytest.fail(f"PDF Download Test Failed. Error: {str(e)}")
+                pytest.fail(f"PDF Download Test Failed. Error: {str(e)}")
