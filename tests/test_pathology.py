@@ -2,6 +2,7 @@ import pytest
 from actions.pathology_action import PathalogyAction
 from utilities.config_reader import get_value
 
+@pytest.mark.mythily
 @pytest.mark.usefixtures("setup_and_teardown")
 class TestSearch:
     
