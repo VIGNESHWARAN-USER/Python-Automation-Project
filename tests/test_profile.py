@@ -11,7 +11,7 @@ class TestProfilePage:
     def test_view_profile_details(self, role):
         la = LoginAction(self.driver)
         pa = ProfileAction(self.driver)
-
+ 
         la.click_login(role)
         la.click_login_button()
 
