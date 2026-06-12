@@ -1,9 +1,11 @@
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 from datetime import datetime
 import os
+import time
 
 
 class BaseAction:
@@ -17,8 +19,12 @@ class BaseAction:
         self.wait.until(EC.element_to_be_clickable(locator)).click()
 
     def js_click(self, locator):
-        element = self.wait.until(EC.visibility_of_element_located(locator))
-        self.driver.execute_script("arguments[0].click();", element)
+        # element = self.wait.until(EC.visibility_of_element_located(locator))
+        self.driver.execute_script("arguments[0].click();", self.driver.find_element(By.XPATH, locator[1]))
+
+    def scroll_and_click(self, locator):
+        self.driver.execute_script("arguments[0].scrollIntoView();")
+        self.click(locator)
 
     # Text Actions
     def send_keys(self, locator, value):
