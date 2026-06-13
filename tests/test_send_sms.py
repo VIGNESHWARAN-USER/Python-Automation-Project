@@ -1,5 +1,6 @@
 import pytest
 from actions.send_msg_action import SendMsgAction
+from actions.login_action import LoginAction
 from utilities.excel_reader import get_data
 
 @pytest.mark.usefixtures("setup_and_teardown")
@@ -8,8 +9,9 @@ class TestSendMsg:
     @pytest.fixture(autouse=True)
     def setup(self, setup_and_teardown):
         self.sm = SendMsgAction(self.driver)
-        self.sm.click_pathologist_login()
-        self.sm.click_signin()
+        self.la = LoginAction(self.driver)
+        self.la.click_login("Pathologist")
+        self.la.click_login_button()
         self.sm.click_msg()
         self.sm.click_sendSMS()
 
