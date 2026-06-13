@@ -33,3 +33,4 @@ class TestAddVisitor:
             assert adv.is_displayed(adv.avp.name), "Add Visitor form is not displayed"
         except Exception as e:
             pytest.fail(f"Add Visitor Page Open Test Failed. Error: {str(e)}")
+
