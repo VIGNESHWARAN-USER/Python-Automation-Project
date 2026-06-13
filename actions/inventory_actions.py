@@ -3,6 +3,8 @@ from actions.base_action import BaseAction
 from utilities.logger import get_logger
 from pages.sidebar_page import SideBarPage
 import pytest
+from utilities.download_checker import is_file_downloaded
+import pytest
 logger = get_logger()
 
 class Inventoryaction(BaseAction):
@@ -71,3 +73,31 @@ class Inventoryaction(BaseAction):
             self.click(self.inva.pdf)
         except Exception as e:
             pytest.fail(f"Unable to click PDF Export. Error: {str(e)}")
+            
+    def verify_excel_download(self):
+        try:
+            return is_file_downloaded(".xlsx")
+
+        except Exception as e:
+            self.take_screenshot("excel_download_failure")
+            pytest.fail(f"Excel download verification failed. Error: {str(e)}")
+
+def verify_csv_download(self):
+    try:
+        return is_file_downloaded(".csv")
+
+    except Exception as e:
+        self.take_screenshot("csv_download_failure")
+        pytest.fail(
+            f"CSV download verification failed. Error: {str(e)}"
+        )
+
+def verify_pdf_download(self):
+    try:
+        return is_file_downloaded(".pdf")
+
+    except Exception as e:
+        self.take_screenshot("pdf_download_failure")
+        pytest.fail(
+            f"PDF download verification failed. Error: {str(e)}"
+        )

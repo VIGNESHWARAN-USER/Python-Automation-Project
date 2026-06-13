@@ -17,3 +17,4 @@ class CallLogPage:
     savebtn= (By.XPATH, "//button[@id='formaddbtn']")
     checklist =(By.XPATH, "//h3[@class='box-title titlefix']")
     error =(By.XPATH, "//h3[@class='box-title titlefix']")
+    emptyfields = (By.XPATH, "//*[contains(text(),'required')]")
