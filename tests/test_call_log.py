@@ -7,11 +7,9 @@ from actions.login_action import LoginAction
 @pytest.mark.usefixtures("setup_and_teardown")
 @pytest.mark.parametrize("name,phone,description,calltype,note,duration",excelreader.get_data("CallLogData.xlsx", "Sheet1"),)
 class TestCallLog:
-
     def test_calllog(self, name, phone, description, calltype, note, duration):
         login = LoginAction(self.driver)
         calllog = CallLogFrontofcActions(self.driver)
-
         try:
             login.click_login("Receptionist")
             login.click_login_button()
