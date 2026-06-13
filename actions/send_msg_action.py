@@ -12,18 +12,6 @@ class SendMsgAction(BaseAction):
         self.sm = SendMsg()
         self.sp = SideBarPage()
 
-    def click_pathologist_login(self):
-        try:
-            self.click(self.sm.pathologistBtn)
-        except Exception as e:
-            logger.error(f"failed to login to the pathologist: {str(e)}")        
-
-    def click_signin(self):
-        try:
-           self.click(self.sm.signInBtn)
-        except Exception as e:
-            logger.error(f"failed to signup to pathologist: {str(e)}")
-
     def click_msg(self):
         try:
             self.click(self.sp.messaging)

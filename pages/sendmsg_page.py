@@ -2,8 +2,6 @@ from selenium.webdriver.common.by import By
 
 class SendMsg:
 
-    pathologistBtn = (By.CSS_SELECTOR,".btn.btn-primary.width50[href='#'][onclick=\"copy('belinat@gmail.com', 'password')\"]")
-    signInBtn = (By.CSS_SELECTOR,"button[type='submit']")
     sendSms = (By.XPATH,"//a[@href=\"https://demo.smart-hospital.in/admin/notification/add\"]/following-sibling::a")
     title = (By.XPATH,"(//div[@class='form-group']/child::input)[1]")
     tempId = (By.XPATH,"(//label[text()='Template Id']/following-sibling::input)[1]")
