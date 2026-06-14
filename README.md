@@ -1,209 +1,73 @@
-# </> Python Automation Project 🇵🇾
+<div align="center">
+
+# 🐍 Python Automation Project
 
 ## 🚀 End-to-End Web Automation Framework
 
-👨‍💻 **Team Name:** ERROR_404
+### 👨‍💻 Team ERROR_404
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge\&logo=python)
-![Selenium](https://img.shields.io/badge/Selenium-Automation-green?style=for-the-badge\&logo=selenium)
-![Pytest](https://img.shields.io/badge/Pytest-Testing-orange?style=for-the-badge\&logo=pytest)
-![GitHub](https://img.shields.io/badge/GitHub-Version_Control-black?style=for-the-badge\&logo=github)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00C2FF&center=true&vCenter=true&width=1000&lines=Python+Automation+Framework;Selenium+WebDriver+%7C+Pytest;Page+Object+Model+(POM);Data+Driven+Testing;Front+Office+%7C+Appointment+%7C+Inventory;Bed+Status+%7C+Complaint+%7C+Call+Log;Built+by+Team+ERROR_404)](https://git.io/typing-svg)
 
----
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Selenium](https://img.shields.io/badge/Selenium-Automation-green?style=for-the-badge&logo=selenium)
+![Pytest](https://img.shields.io/badge/Pytest-Testing-orange?style=for-the-badge&logo=pytest)
+![GitHub](https://img.shields.io/badge/GitHub-Version_Control-black?style=for-the-badge&logo=github)
 
-# 📖 Project Overview
+![GitHub Repo stars](https://img.shields.io/github/stars/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
 
-The Python Automation Project is a robust Selenium-based automation framework developed using:
-
-✨ Selenium WebDriver
-
-✨ Python
-
-✨ Pytest
-
-✨ Page Object Model (POM)
-
-✨ Git & GitHub
-
-✨ HTML Reporting
-
-✨ Data-Driven Testing
-
-The framework follows the **Page Object Model (POM)** design pattern and automates critical web application workflows.
+</div>
 
 ---
 
-# 👨‍💻 Team ERROR_404
+## 🎯 Automated Modules
 
-## 👤 Team Members
+### 🏢 Front Office Module
 
-🧑‍💻 Vigneshwaran
+- ✅ Add Visitor
+- ✅ Call Log
+- ✅ Complaint
+- ✅ Postal Dispatch
 
-🧑‍💻 Muhindhar
+### 📅 Appointment Module
 
-🧑‍💻 Jerishwin
+- ✅ Appointment Filter
+- ✅ Chat with Doctor
 
-🧑‍💻 Mythili
+### 🛏️ IPD Module
 
-🧑‍💻 Malavicka
+- ✅ Bed Status
 
----
+### 📦 Inventory Module
 
-# 🛠️ Technology Stack
+- ✅ Inventory Management
 
-| 🔧 Technology   | 📌 Purpose               |
-| --------------- | ------------------------ |
-| 🐍 Python       | Programming Language     |
-| 🌐 Selenium     | Web Automation           |
-| 🧪 Pytest       | Test Execution Framework |
-| 📦 PIP          | Dependency Management    |
-| 🐙 Git & GitHub | Version Control          |
-| 📊 HTML Reports | Reporting                |
+### 🔐 Authentication Module
 
----
-
-# 📂 Project Structure
-
-```text
-Python-Automation-Project
-│
-├── 📁 actions
-├── 📁 configurations
-├── 📁 data_files
-├── 📁 pages
-├── 📁 tests
-├── 📁 utilities
-│
-├── 📄 requirements.txt
-└── 📄 .gitignore
-```
+- ✅ Login Validation
+- ✅ User Authentication
 
 ---
 
-# 🎯 Automated Modules
+## 🌟 Framework Features
 
-## 🏢 Front Office Module
-
-✅ Add Visitor
-
-✅ Visitor Validation
-
-✅ Form Submission Validation
-
----
-
-## 🔐 Authentication Module
-
-✅ Login Validation
-
-✅ User Authentication
+- 🚀 Page Object Model (POM)
+- 🚀 Data-Driven Testing
+- 🚀 Pytest Markers
+- 🚀 Reusable Base Actions
+- 🚀 HTML Reporting
+- 🚀 Screenshot Capture on Failure
+- 🚀 Configuration Management
+- 🚀 Scalable Framework Design
 
 ---
 
-## 🧪 Test Automation Features
+<div align="center">
 
-✅ Data-Driven Testing
+### 🚨 TEAM ERROR_404 🚨
 
-✅ Reusable Actions
+### 🐞 "Finding Bugs Before Users Do"
 
-✅ Page Object Model Implementation
-
-✅ Utility Functions
-
-✅ Configuration Management
-
----
-
-# 📊 Reporting Dashboard
-
-## 📈 Reports Generated
-
-✅ Pytest HTML Report
-
-✅ Execution Logs
-
-✅ Failure Screenshots
-
-✅ Test Execution Summary
-
----
-
-# 🚀 How to Execute
-
-## 📥 Clone Repository
-
-```bash
-git clone https://github.com/VIGNESHWARAN-USER/Python-Automation-Project.git
-```
-
-## 📂 Navigate to Project
-
-```bash
-cd Python-Automation-Project
-```
-
-## 📦 Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## ▶️ Execute All Tests
-
-```bash
-pytest -v -s
-```
-
-## 📊 Generate HTML Report
-
-```bash
-pytest --html=report.html --self-contained-html
-```
-
----
-
-# 🌟 Framework Highlights
-
-🚀 Page Object Model (POM)
-
-🚀 Reusable Actions
-
-🚀 Data-Driven Testing
-
-🚀 HTML Reporting
-
-🚀 Pytest Framework
-
-🚀 Scalable Framework Design
-
-🚀 Easy Maintenance
-
-🚀 Team Collaboration Using GitHub
-
----
-
-# 🔄 Version Control Strategy
-
-✅ Feature Branch Development
-
-✅ Pull Request Reviews
-
-✅ Code Review Process
-
-✅ GitHub Collaboration
-
----
-
-# 🔗 Repository
-
-🐙 GitHub Repository
-
-Python Automation Project
-
----
-
-# ❤️ Developed By
-
-## 🚨 Team ERROR_404 🚨
-
-### "Automating Today for a Better Tomorrow" 🚀
+</div>
