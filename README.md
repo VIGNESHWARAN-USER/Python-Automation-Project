@@ -126,6 +126,83 @@
 | 🧑‍💻 Malavicka |
 
 ---
+---
+
+# ⚙️ How To Run The Project
+
+## 📥 Clone Repository
+
+```bash
+git clone https://github.com/VIGNESHWARAN-USER/Python-Automation-Project.git
+```
+
+## 📂 Navigate To Project
+
+```bash
+cd Python-Automation-Project
+```
+
+## 🐍 Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+## ▶️ Activate Virtual Environment
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / Mac
+
+```bash
+source venv/bin/activate
+```
+
+## 📦 Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## 🚀 Run All Test Cases
+
+```bash
+pytest
+```
+
+## 🎯 Run Specific Marker
+
+```bash
+pytest -m muhindhar
+```
+
+## ⚡ Run Tests In Parallel
+
+```bash
+pytest -m muhindhar -n 4
+```
+
+## 📊 Generate HTML Report
+
+```bash
+pytest --html=reports/HTMLReport.html --self-contained-html
+```
+
+## 🎭 Generate Allure Report
+
+```bash
+pytest --alluredir=reports/AllureReport
+```
+
+```bash
+allure serve reports/AllureReport
+```
+
+---
 
 <div align="center">
 
