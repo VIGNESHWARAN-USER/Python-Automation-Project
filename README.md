@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🐍 Python Automation Project
+# 🇵🇾 Python Automation Project
 
 ## 🚀 End-to-End Healthcare Automation Framework
 
