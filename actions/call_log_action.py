@@ -4,7 +4,9 @@ from utilities.logger import get_logger
 import pytest
 from selenium.common.exceptions import StaleElementReferenceException
 from pages.sidebar_page import SideBarPage
+
 logger = get_logger()
+
 
 class CallLogFrontofcActions(BaseAction):
 
@@ -20,6 +22,7 @@ class CallLogFrontofcActions(BaseAction):
             self.js_click(self.cfp.recbtnfo)
 
         except Exception as e:
+            self.take_screenshot("receptionist_click_failure")
             pytest.fail(f"Unable to click receptionist button. Error: {str(e)}")
 
     def clksign(self):
@@ -29,6 +32,7 @@ class CallLogFrontofcActions(BaseAction):
             self.js_click(self.cfp.signinfo)
 
         except Exception as e:
+            self.take_screenshot("signin_click_failure")
             pytest.fail(f"Unable to click sign in button. Error: {str(e)}")
 
     def frontofclink(self):
@@ -41,6 +45,7 @@ class CallLogFrontofcActions(BaseAction):
             logger.info("Front Office clicked successfully")
 
         except Exception as e:
+            self.take_screenshot("frontoffice_failure")
             pytest.fail(f"Unable to click front office link. Error: {str(e)}")
 
     def phcalllog(self):
@@ -50,6 +55,7 @@ class CallLogFrontofcActions(BaseAction):
             self.js_click(self.cfp.phcalllog)
 
         except Exception as e:
+            self.take_screenshot("phonecalllog_failure")
             pytest.fail(f"Unable to click phone call log. Error: {str(e)}")
 
     def addcall(self):
@@ -59,6 +65,7 @@ class CallLogFrontofcActions(BaseAction):
             self.js_click(self.cfp.addlog)
 
         except Exception as e:
+            self.take_screenshot("addcall_failure")
             pytest.fail(f"Unable to click add call button. Error: {str(e)}")
 
     def enterdet(self, name, phone, description, calltype, note, duration):
@@ -76,6 +83,7 @@ class CallLogFrontofcActions(BaseAction):
                 self.js_click(self.cfp.outgng)
 
         except Exception as e:
+            self.take_screenshot("call_details_failure")
             pytest.fail(f"Unable to enter call details. Error: {str(e)}")
 
     def clicksave(self):
@@ -85,24 +93,27 @@ class CallLogFrontofcActions(BaseAction):
             self.js_click(self.cfp.savebtn)
 
         except Exception as e:
+            self.take_screenshot("save_button_failure")
             pytest.fail(f"Unable to click save button. Error: {str(e)}")
 
     def checklist(self):
-            try:
-                logger.info("checking whether list is visible")
+        try:
+            logger.info("checking whether list is visible")
 
-                for _ in range(3):
-                    try:
-                        self.wait_for_visibility(self.cfp.checklist)
-                        return self.get_text(self.cfp.checklist)
+            for _ in range(3):
+                try:
+                    self.wait_for_visibility(self.cfp.checklist)
+                    return self.get_text(self.cfp.checklist)
 
-                    except StaleElementReferenceException:
-                        logger.warning("Retrying due to stale element")
+                except StaleElementReferenceException:
+                    logger.warning("Retrying due to stale element")
 
-                pytest.fail("Checklist not visible after retries")
+            self.take_screenshot("checklist_failure")
+            pytest.fail("Checklist not visible after retries")
 
-            except Exception as e:
-                pytest.fail(f"Checklist not visible. Error: {str(e)}")
+        except Exception as e:
+            self.take_screenshot("checklist_failure")
+            pytest.fail(f"Checklist not visible. Error: {str(e)}")
 
     def errorcheck(self):
         try:
@@ -110,3 +121,17 @@ class CallLogFrontofcActions(BaseAction):
 
         except Exception:
             return False
+
+    def emptyfields(self):
+        try:
+            logger.info("Checking required field validation")
+
+            status = self.is_displayed(self.cfp.emptyfields)
+
+            logger.info(f"Validation displayed: {status}")
+
+            return status
+
+        except Exception as e:
+            self.take_screenshot("calllog_emptyfields_failure")
+            pytest.fail(f"Required field validation not displayed. Error: {str(e)}")

@@ -6,25 +6,29 @@ from actions.login_action import LoginAction
 
 @pytest.mark.muhindhar
 @pytest.mark.usefixtures("setup_and_teardown")
-@pytest.mark.parametrize("complainttype,source,complainby,phone,date,description,actiontaken,assigned,note",excelreader.get_data("ComplaintData.xlsx", "Sheet1"),)
 class TestComplaint:
-
+    @pytest.mark.parametrize("complainttype,source,complainby,phone,date,description,actiontaken,assigned,note",excelreader.get_data("ComplaintData.xlsx", "Sheet1"),)
     def test_complaint(self,complainttype,source,complainby,phone,date,description,actiontaken,assigned,note,):
         login = LoginAction(self.driver)
         complaint = ComplaintActions(self.driver)
-        try:
-            login.click_login("Receptionist")
-            login.click_login_button()
+        login.click_login("Receptionist")
+        login.click_login_button()
+        complaint.clkfo()
+        complaint.clkcom()
+        complaint.addcomp()
 
-            complaint.clkfo()
-            complaint.clkcom()
-            complaint.addcomp()
+        complaint.compdet(complainttype,source,complainby,phone,date,description,actiontaken,assigned,note,)
+        complaint.savebtn()
+        actual_text = complaint.checklistcom()
+        assert (actual_text == "Complain List"), f"Expected 'Complain List' but got '{actual_text}'"
 
-            complaint.compdet(complainttype,source,complainby,phone,date,description,actiontaken,assigned,note,)
-            complaint.savebtn()
-            actual_text = complaint.checklistcom()
-
-            assert (actual_text == "Complain List"), f"Expected 'Complain List' but got '{actual_text}'"
-        except Exception as e:
-            complaint.take_screenshot("complaint_failure")
-            pytest.fail(f"Complaint Test Failed. Error: {str(e)}")
+    def test_complaint_empty_fields(self):
+        login = LoginAction(self.driver)
+        complaint = ComplaintActions(self.driver)
+        login.click_login("Receptionist")
+        login.click_login_button()
+        complaint.clkfo()
+        complaint.clkcom()
+        complaint.addcomp()
+        complaint.savebtn()
+        assert (complaint.emptyfields()), "Required field validation message not displayed"
