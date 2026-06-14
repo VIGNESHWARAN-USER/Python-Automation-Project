@@ -15,8 +15,7 @@ class TestOPDSearch:
         opd.search_patient("Maria")
         actual_name = opd.verify_search_name_result()
         print(f"Patient Name Found: {actual_name}")
-        assert "Maria" in actual_name, \
-            f"Expected patient name to contain 'Maria', but got '{actual_name}'"
+        assert "Maria" in actual_name, f"Expected patient name to contain 'Maria', but got '{actual_name}'"
 
     def test_search_non_existing_patient(self):
         login = LoginAction(self.driver)

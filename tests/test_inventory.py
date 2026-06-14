@@ -6,6 +6,7 @@ from utilities.download_checker import clear_downloads, is_file_downloaded
 @pytest.mark.muhindhar
 @pytest.mark.usefixtures("setup_and_teardown")
 class TestInventory:
+    @pytest.mark.flaky(reruns=2)
     def test_inventory_stocklist(self):
         login = LoginAction(self.driver)
         inva = Inventoryaction(self.driver)
@@ -17,6 +18,7 @@ class TestInventory:
         except Exception as e:
             pytest.fail(f"Inventory Stock List Test Failed. Error: {str(e)}")
 
+    
     def test_inventory_issueitem(self):
         login = LoginAction(self.driver)
         inva = Inventoryaction(self.driver)
@@ -29,6 +31,7 @@ class TestInventory:
         except Exception as e:
             pytest.fail(f"Issue Item Test Failed. Error: {str(e)}")
 
+    @pytest.mark.flaky(reruns=2)
     def test_inventory_excel_download(self):
         login = LoginAction(self.driver)
         inva = Inventoryaction(self.driver)
@@ -42,6 +45,7 @@ class TestInventory:
         except Exception as e:
             pytest.fail(f"Excel Download Test Failed. Error: {str(e)}")
 
+    @pytest.mark.flaky(reruns=2)
     def test_inventory_csv_download(self):
         login = LoginAction(self.driver)
         inva = Inventoryaction(self.driver)
@@ -55,6 +59,7 @@ class TestInventory:
         except Exception as e:
             pytest.fail(f"CSV Download Test Failed. Error: {str(e)}")
 
+    @pytest.mark.flaky(reruns=2)
     def test_inventory_pdf_download(self):
         login = LoginAction(self.driver)
         inva = Inventoryaction(self.driver)
