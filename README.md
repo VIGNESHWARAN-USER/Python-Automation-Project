@@ -178,6 +178,10 @@ pytest
 
 ```bash
 pytest -m muhindhar
+pytest -m vigneshwaran
+pytest -m jerishwin
+pytest -m mythily
+pytest -m malavicka
 ```
 
 ## ⚡ Run Tests In Parallel
