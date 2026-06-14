@@ -21,9 +21,9 @@ class JoinConsultationPage:
     save_consultation_button = (By.XPATH,"//div[@class = 'pull-right mrminus8']/button[@class = 'btn btn-primary']")
 
     def get_status_dropdown(self, rowIndex):
-        return (By.XPATH, "//tbody/tr[" + rowIndex + "]/td[8]/form/select")
+        return (By.XPATH, "//tbody/tr[" + str(rowIndex) + "]/td[8]/form/select")
     
 
     def get_action_buttons(self, rowIndex):
-        return (By.XPATH, "//tbody/tr[" + rowIndex + "]/td[9]/a")
+        return (By.XPATH, "//tbody/tr[" + str(rowIndex) + "]/td[9]/a")
     
