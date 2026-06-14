@@ -10,7 +10,6 @@ class TestAddVisitor:
 
     @pytest.mark.parametrize("name,phone,idcard,noofperson,note",csvreader.get_data("addvisitordata.csv"))
     def test_addvisitors(self, name, phone, idcard, noofperson, note):
-
         la = LoginAction(self.driver)
         adv = AddvisiorActions(self.driver)
         la.click_login("Receptionist")
@@ -18,11 +17,9 @@ class TestAddVisitor:
         adv.clck_frontofc()
         adv.add_inp(name, phone, idcard, noofperson, note)
         adv.clk_savebtn()
-
         assert adv.check_list(),f"Visitor List is not displayed after adding visitor: {name}"
 
     def test_addvisitor_page_open(self):
-
         la = LoginAction(self.driver)
         adv = AddvisiorActions(self.driver)
         la.click_login("Receptionist")

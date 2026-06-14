@@ -10,7 +10,6 @@ class Testbedstatus:
 
         bedsts = bedstatusaction(self.driver)
         baseact = LoginAction(self.driver)
-        
         baseact.click_login("Receptionist")
         baseact.click_login_button()
         bedsts.clck_appointment()

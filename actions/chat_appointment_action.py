@@ -1,3 +1,4 @@
+from utilities.config_reader import get_value
 from actions.base_action import BaseAction
 from pages.chat_appointment_pages import Chatpage
 from utilities.logger import get_logger
@@ -62,7 +63,8 @@ class Chataction(BaseAction):
     def sendmessage(self):
         try:
             logger.info("sending message")
-            self.send_keys(self.cap.msg, "Hello Doctor")
+            
+            self.send_keys(self.cap.msg,get_value("data_files/chat.ini", "chat", "msg"))
             self.click(self.cap.sendmsg)
 
         except Exception as e:
