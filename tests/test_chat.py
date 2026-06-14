@@ -10,25 +10,19 @@ class TestChatAppointment:
     def test_chatappointment(self):
         login = LoginAction(self.driver)
         chat = Chataction(self.driver)
-
         login.click_login("Receptionist")
         login.click_login_button()
-
         chat.clickappointment()
         chat.clickchaticon()
         chat.selectdoctor()
         chat.sendmessage()
-
         assert chat.verifymessage(), "Chat message verification failed"
 
     def test_chat_page_open(self):
         login = LoginAction(self.driver)
         chat = Chataction(self.driver)
-
         login.click_login("Receptionist")
         login.click_login_button()
-
         chat.clickappointment()
         chat.clickchaticon()
-
         assert chat.is_displayed(chat.cap.person), "Doctor list is not displayed"
