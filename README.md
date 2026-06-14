@@ -100,7 +100,6 @@
 - 🚀 Explicit Wait Implementation
 - 🚀 Configuration Management
 - 🚀 Modular Framework Design
-- 🚀 Cross Module Reusability
 
 ---
 
