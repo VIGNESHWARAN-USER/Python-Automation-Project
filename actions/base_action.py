@@ -122,3 +122,6 @@ class BaseAction:
 
     def get_elements(self, locator):
         return self.wait.until(EC.visibility_of_all_elements_located(locator))
+
+    def is_clickable(self, locator):
+        return self.wait.until(EC.element_to_be_clickable(locator))

@@ -349,9 +349,16 @@ class JoinConsultationAction(BaseAction):
             raise   
 
 
-    def set_api_key(self, key):
-        self.clear_credential_fields()
-        self.enter_zoom_api_key(key)
+    def is_action_clickable(self, index):
+        try:
+            action_button = self.get_elements(
+                self.jp.get_action_buttons(index)
+            )[0]
 
-    def set_api_secret(self, secret):
-        pass
+            return self.is_clickable(action_button)
+
+        except Exception as e:
+            self.logger.error(
+                f"Failed to verify action clickable: {str(e)}"
+            )
+            raise
