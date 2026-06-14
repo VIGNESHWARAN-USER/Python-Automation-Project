@@ -35,7 +35,7 @@ class JoinConsultationAction(BaseAction):
     def click_join_button(self, index):
         try:
             self.logger.info("Clicking join button")
-            self.js_click(
+            self.js_click_element(
                 self.get_elements(
                     self.jp.get_action_buttons(index)
                 )[0]

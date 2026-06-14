@@ -24,6 +24,9 @@ class BaseAction:
         # element = self.wait.until(EC.visibility_of_element_located(locator))
         self.driver.execute_script("arguments[0].click();", self.driver.find_element(By.XPATH, locator[1]))
 
+    def js_click_element(self, element):
+            self.driver.execute_script("arguments[0].click();", element)
+
     def scroll_and_click(self, locator):
         element = self.driver.find_element(*locator)
         self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});",element)
