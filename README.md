@@ -2,72 +2,138 @@
 
 # 🐍 Python Automation Project
 
-## 🚀 End-to-End Web Automation Framework
+## 🚀 End-to-End Healthcare Automation Framework
 
 ### 👨‍💻 Team ERROR_404
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00C2FF&center=true&vCenter=true&width=1000&lines=Python+Automation+Framework;Selenium+WebDriver+%7C+Pytest;Page+Object+Model+(POM);Data+Driven+Testing;Front+Office+%7C+Appointment+%7C+Inventory;Bed+Status+%7C+Complaint+%7C+Call+Log;Built+by+Team+ERROR_404)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&pause=1000&color=36BCF7&center=true&vCenter=true&width=1200&lines=Python+Selenium+Automation+Framework;Pytest+%7C+Page+Object+Model;Data+Driven+Testing;Smart+Hospital+Automation;Built+with+❤️+by+Team+ERROR_404)](https://git.io/typing-svg)
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
 ![Selenium](https://img.shields.io/badge/Selenium-Automation-green?style=for-the-badge&logo=selenium)
 ![Pytest](https://img.shields.io/badge/Pytest-Testing-orange?style=for-the-badge&logo=pytest)
 ![GitHub](https://img.shields.io/badge/GitHub-Version_Control-black?style=for-the-badge&logo=github)
 
-![GitHub Repo stars](https://img.shields.io/github/stars/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
 
 </div>
 
 ---
 
-## 🎯 Automated Modules
+# 🏥 Smart Hospital Modules Automated
 
-### 🏢 Front Office Module
+## 🔐 Authentication Module
+
+- ✅ Login Validation
+- ✅ Patient Login
+- ✅ Role Based Authentication
+
+---
+
+## 🏢 Front Office Module
 
 - ✅ Add Visitor
 - ✅ Call Log
 - ✅ Complaint
 - ✅ Postal Dispatch
-
-### 📅 Appointment Module
-
-- ✅ Appointment Filter
-- ✅ Chat with Doctor
-
-### 🛏️ IPD Module
-
-- ✅ Bed Status
-
-### 📦 Inventory Module
-
-- ✅ Inventory Management
-
-### 🔐 Authentication Module
-
-- ✅ Login Validation
-- ✅ User Authentication
+- ✅ Report Download
 
 ---
 
-## 🌟 Framework Features
+## 📅 Appointment Module
+
+- ✅ Appointment Filter
+- ✅ Chat with Doctor
+- ✅ Bed Status
+- ✅ Join Consultation
+
+---
+
+## 🛏️ IPD Module
+
+- ✅ Bed Status Verification
+- ✅ Room Availability Validation
+
+---
+
+## 📦 Inventory Module
+
+- ✅ Inventory Management
+- ✅ Inventory Search
+- ✅ Inventory Validation
+
+---
+
+## 🧪 Pathology Module
+
+- ✅ Pathology Search
+- ✅ Pathology Payment
+- ✅ Patient Pathology Validation
+
+---
+
+## 👨‍⚕️ Staff Management Module
+
+- ✅ Apply Leave
+- ✅ Send Message
+- ✅ Attendance Validation
+
+---
+
+## 👤 User Management Module
+
+- ✅ Profile Verification
+- ✅ Super Admin Validation
+- ✅ Dashboard Verification
+
+---
+
+# ⚡ Framework Features
 
 - 🚀 Page Object Model (POM)
-- 🚀 Data-Driven Testing
-- 🚀 Pytest Markers
+- 🚀 Data Driven Testing (Excel)
 - 🚀 Reusable Base Actions
-- 🚀 HTML Reporting
+- 🚀 Pytest Markers
+- 🚀 HTML Reports
 - 🚀 Screenshot Capture on Failure
+- 🚀 Explicit Wait Implementation
 - 🚀 Configuration Management
-- 🚀 Scalable Framework Design
+- 🚀 Modular Framework Design
+- 🚀 Cross Module Reusability
+
+---
+
+# 📊 Reporting
+
+✅ Pytest HTML Report
+
+✅ Execution Logs
+
+✅ Failure Screenshots
+
+✅ Test Summary Reports
+
+---
+
+# 👨‍💻 Team ERROR_404
+
+| Member |
+|---------|
+| 🧑‍💻 Vigneshwaran |
+| 🧑‍💻 Muhindhar |
+| 🧑‍💻 Jerishwin |
+| 🧑‍💻 Mythili |
+| 🧑‍💻 Malavicka |
 
 ---
 
 <div align="center">
 
-### 🚨 TEAM ERROR_404 🚨
+## 🚨 TEAM ERROR_404 🚨
 
-### 🐞 "Finding Bugs Before Users Do"
+### 🐞 Finding Bugs Before Users Do
+
+### ⭐ If you like this project, don't forget to Star the Repository ⭐
 
 </div>
