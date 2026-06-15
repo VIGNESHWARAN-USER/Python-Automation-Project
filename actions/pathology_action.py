@@ -21,23 +21,27 @@ class PathalogyAction(BaseAction):
     def click_user_login(self):
         try:
            self.click(self.plp.userlog)
+           logger.info("Clicked User Login successfully")
         except Exception as e:
             logger.error(f"failed to click user login: {str(e)}")
 
     def click_signup(self):
         try:
            self.click(self.plp.signup)
+           logger.info("Clicked Signup button successfully")
         except Exception as e:
             logger.error(f"failed to click signup button: {str(e)}")
 
     def click_pathology_menu(self):
         try:
            self.js_click(self.sp.pathlogyMenu)
+           logger.info("Clicked Pathology menu successfully")
         except Exception as e:
             logger.error(f"failed to click pathology menu: {str(e)}")
 
     def search_report(self, billno):
         self.send_keys(self.pp.search, str(billno))
+        logger.info(f"Searched pathology report with Bill No: {billno}")
     
     def is_rec_displaced(self, billno):
         try:
@@ -54,11 +58,13 @@ class PathalogyAction(BaseAction):
     # payment
     def search(self, billno):
         self.send_keys(self.pp.search, str(billno))
+        logger.info(f"Searched pathology report with Bill No: {billno}")
 
     def click_pay(self):
         try:
             self.wait.until(EC.element_to_be_clickable(self.pp.paybtn))
             self.click(self.pp.paybtn)
+            logger.info("Clicked Pay button successfully")
         except Exception as e:
             logger.error(f"failed to click pay button: {str(e)}")
 
@@ -66,7 +72,8 @@ class PathalogyAction(BaseAction):
         try:
             field = self.wait.until(EC.visibility_of_element_located(self.pp.payAmt))
             field.clear()                  
-            field.send_keys(str(amt)) 
+            field.send_keys(str(amt))
+            logger.info(f"Entered payment amount: {amt}") 
         except Exception as e:
             logger.error(f"failed to enter amount: {str(e)}")
 
@@ -74,6 +81,7 @@ class PathalogyAction(BaseAction):
         try:
             self.wait.until(EC.element_to_be_clickable(self.pp.add)) 
             self.js_click(self.pp.add) 
+            logger.info("Clicked Add button successfully")
         except Exception as e:
             logger.error(f"failed to click add button: {str(e)}")
 
@@ -82,6 +90,7 @@ class PathalogyAction(BaseAction):
             self.wait.until(EC.element_to_be_clickable(self.pp.makepay))
             self.js_click(self.pp.makepay)                              
             self.wait.until(EC.frame_to_be_available_and_switch_to_it(self.pp.frame))
+            logger.info("Navigated to payment gateway successfully")
         except Exception as e:
             logger.error(f"failed to click make payment: {str(e)}")
 
@@ -89,6 +98,7 @@ class PathalogyAction(BaseAction):
         try:
             self.wait.until(EC.visibility_of_element_located(self.pp.mobile))
             self.send_keys(self.pp.mobile, str(mobile))
+            logger.info(f"Entered mobile number: {mobile}")
         except Exception as e:
             logger.error(f"failed to enter mobile: {str(e)}")
 
@@ -96,6 +106,7 @@ class PathalogyAction(BaseAction):
         try:
             self.wait.until(EC.element_to_be_clickable(self.pp.cont))
             self.js_click(self.pp.cont)
+            logger.info("Clicked Continue button successfully")
         except Exception as e:
             logger.error(f"failed to click continue button: {str(e)}")
 
@@ -103,6 +114,7 @@ class PathalogyAction(BaseAction):
         try:
             self.wait.until(EC.element_to_be_clickable(self.pp.upi))
             self.js_click(self.pp.upi)
+            logger.info("Selected UPI payment option")
         except Exception as e:
             logger.error(f"failed to click upi option: {str(e)}")
 
@@ -110,6 +122,7 @@ class PathalogyAction(BaseAction):
         try:
             self.wait.until(EC.visibility_of_element_located(self.pp.email))
             self.send_keys(self.pp.email, str(upiId))
+            logger.info(f"Entered UPI ID: {upiId}")
         except Exception as e:
             logger.error(f"failed to enter UPI ID: {str(e)}")
 
@@ -117,28 +130,36 @@ class PathalogyAction(BaseAction):
         try:
             self.wait.until(EC.element_to_be_clickable(self.pp.verify))
             self.js_click(self.pp.verify)
+            logger.info("Clicked Verify button successfully")
         except Exception as e:
             logger.error(f"failed to click verify button: {str(e)}")
 
     def get_success_txt(self):
         try:
             self.driver.switch_to.default_content()
+            logger.info("Switched back to main content")
         except Exception as e:
             logger.error(f"Already on main page: {str(e)}")
         try:
             longwait = WebDriverWait(self.driver, 30)
             longwait.until(EC.visibility_of_element_located(self.pp.succ))
-            return self.get_text(self.pp.succ)
+            msg = self.get_text(self.pp.succ)
+            logger.info(f"Payment success message displayed: {msg}")
+            return msg
         except Exception as e:
             logger.error(f"Success message not found on page: {str(e)}")
 
     def get_pay_error_txt(self):
         try:
-            return self.get_text(self.pp.payError)
+            msg = self.get_text(self.pp.payError)
+            logger.info(f"Payment error message displayed: {msg}")
+            return msg
         except TimeoutException:
             page_source = self.driver.page_source
             if "Amount Should Not Be Greater Than Balance" in page_source:
+                logger.info("Validation message displayed: Amount Should Not Be Greater Than Balance")
                 return "Amount Should Not Be Greater Than Balance"
             if "Invalid Amount" in page_source:
+                logger.info("Validation message displayed: Invalid Amount")
                 return "Invalid Amount."
             return ""

@@ -3,6 +3,7 @@ from actions.send_msg_action import SendMsgAction
 from actions.login_action import LoginAction
 from utilities.excel_reader import get_data
 
+@pytest.mark.mythily
 @pytest.mark.usefixtures("setup_and_teardown")
 class TestSendMsg:
     
