@@ -187,7 +187,7 @@ pytest -m malavicka
 ## ⚡ Run Tests In Parallel
 
 ```bash
-pytest -m muhindhar -n 4
+pytest -m (specific marker or file name) -n 4
 ```
 
 ## 📊 Generate HTML Report
