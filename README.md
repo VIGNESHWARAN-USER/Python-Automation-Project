@@ -1,122 +1,109 @@
-# </> Python Automation Project 🇵🇾
+<div align="center">
 
-## 🚀 End-to-End Web Automation Framework
+# 🇵🇾 Python Automation Project
 
-👨‍💻 **Team Name:** ERROR_404
+## 🚀 End-to-End Healthcare Automation Framework
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge\&logo=python)
-![Selenium](https://img.shields.io/badge/Selenium-Automation-green?style=for-the-badge\&logo=selenium)
-![Pytest](https://img.shields.io/badge/Pytest-Testing-orange?style=for-the-badge\&logo=pytest)
-![GitHub](https://img.shields.io/badge/GitHub-Version_Control-black?style=for-the-badge\&logo=github)
+### 👨‍💻 Team ERROR_404
 
----
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=26&pause=1000&color=36BCF7&center=true&vCenter=true&width=1200&lines=Python+Selenium+Automation+Framework;Pytest+%7C+Page+Object+Model;Data+Driven+Testing;Smart+Hospital+Automation;Built+with+❤️+by+Team+ERROR_404)](https://git.io/typing-svg)
 
-# 📖 Project Overview
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Selenium](https://img.shields.io/badge/Selenium-Automation-green?style=for-the-badge&logo=selenium)
+![Pytest](https://img.shields.io/badge/Pytest-Testing-orange?style=for-the-badge&logo=pytest)
+![GitHub](https://img.shields.io/badge/GitHub-Version_Control-black?style=for-the-badge&logo=github)
 
-The Python Automation Project is a robust Selenium-based automation framework developed using:
+![GitHub contributors](https://img.shields.io/github/contributors/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/VIGNESHWARAN-USER/Python-Automation-Project?style=for-the-badge)
 
-✨ Selenium WebDriver
-
-✨ Python
-
-✨ Pytest
-
-✨ Page Object Model (POM)
-
-✨ Git & GitHub
-
-✨ HTML Reporting
-
-✨ Data-Driven Testing
-
-The framework follows the **Page Object Model (POM)** design pattern and automates critical web application workflows.
+</div>
 
 ---
 
-# 👨‍💻 Team ERROR_404
-
-## 👤 Team Members
-
-🧑‍💻 Vigneshwaran
-
-🧑‍💻 Muhindhar
-
-🧑‍💻 Jerishwin
-
-🧑‍💻 Mythili
-
-🧑‍💻 Malavicka
-
----
-
-# 🛠️ Technology Stack
-
-| 🔧 Technology   | 📌 Purpose               |
-| --------------- | ------------------------ |
-| 🐍 Python       | Programming Language     |
-| 🌐 Selenium     | Web Automation           |
-| 🧪 Pytest       | Test Execution Framework |
-| 📦 PIP          | Dependency Management    |
-| 🐙 Git & GitHub | Version Control          |
-| 📊 HTML Reports | Reporting                |
-
----
-
-# 📂 Project Structure
-
-```text
-Python-Automation-Project
-│
-├── 📁 actions
-├── 📁 configurations
-├── 📁 data_files
-├── 📁 pages
-├── 📁 tests
-├── 📁 utilities
-│
-├── 📄 requirements.txt
-└── 📄 .gitignore
-```
-
----
-
-# 🎯 Automated Modules
-
-## 🏢 Front Office Module
-
-✅ Add Visitor
-
-✅ Visitor Validation
-
-✅ Form Submission Validation
-
----
+# 🏥 Smart Hospital Modules Automated
 
 ## 🔐 Authentication Module
 
-✅ Login Validation
-
-✅ User Authentication
-
----
-
-## 🧪 Test Automation Features
-
-✅ Data-Driven Testing
-
-✅ Reusable Actions
-
-✅ Page Object Model Implementation
-
-✅ Utility Functions
-
-✅ Configuration Management
+- ✅ Login Validation
+- ✅ Patient Login
+- ✅ Role Based Authentication
 
 ---
 
-# 📊 Reporting Dashboard
+## 🏢 Front Office Module
 
-## 📈 Reports Generated
+- ✅ Add Visitor
+- ✅ Call Log
+- ✅ Complaint
+- ✅ Postal Dispatch
+- ✅ Report Download
+
+---
+
+## 📅 Appointment Module
+
+- ✅ Appointment Filter
+- ✅ Chat with Doctor
+- ✅ Bed Status
+- ✅ Join Consultation
+
+---
+
+## 🛏️ IPD Module
+
+- ✅ Bed Status Verification
+- ✅ Room Availability Validation
+
+---
+
+## 📦 Inventory Module
+
+- ✅ Inventory Management
+- ✅ Inventory Search
+- ✅ Inventory Validation
+
+---
+
+## 🧪 Pathology Module
+
+- ✅ Pathology Search
+- ✅ Pathology Payment
+- ✅ Patient Pathology Validation
+
+---
+
+## 👨‍⚕️ Staff Management Module
+
+- ✅ Apply Leave
+- ✅ Send Message
+- ✅ Attendance Validation
+
+---
+
+## 👤 User Management Module
+
+- ✅ Profile Verification
+- ✅ Super Admin Validation
+- ✅ Dashboard Verification
+
+---
+
+# ⚡ Framework Features
+
+- 🚀 Page Object Model (POM)
+- 🚀 Data Driven Testing (Excel)
+- 🚀 Reusable Base Actions
+- 🚀 Pytest Markers
+- 🚀 HTML Reports
+- 🚀 Screenshot Capture on Failure
+- 🚀 Explicit Wait Implementation
+- 🚀 Configuration Management
+- 🚀 Modular Framework Design
+
+---
+
+# 📊 Reporting
 
 ✅ Pytest HTML Report
 
@@ -124,11 +111,24 @@ Python-Automation-Project
 
 ✅ Failure Screenshots
 
-✅ Test Execution Summary
+✅ Test Summary Reports
 
 ---
 
-# 🚀 How to Execute
+# 👨‍💻 Team ERROR_404
+
+| Member |
+|---------|
+| 🧑‍💻 Vigneshwaran |
+| 🧑‍💻 Muhindhar |
+| 🧑‍💻 Jerishwin |
+| 🧑‍💻 Mythili |
+| 🧑‍💻 Malavicka |
+
+---
+---
+
+# ⚙️ How To Run The Project
 
 ## 📥 Clone Repository
 
@@ -136,10 +136,30 @@ Python-Automation-Project
 git clone https://github.com/VIGNESHWARAN-USER/Python-Automation-Project.git
 ```
 
-## 📂 Navigate to Project
+## 📂 Navigate To Project
 
 ```bash
 cd Python-Automation-Project
+```
+
+## 🐍 Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+## ▶️ Activate Virtual Environment
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / Mac
+
+```bash
+source venv/bin/activate
 ```
 
 ## 📦 Install Dependencies
@@ -148,62 +168,52 @@ cd Python-Automation-Project
 pip install -r requirements.txt
 ```
 
-## ▶️ Execute All Tests
+## 🚀 Run All Test Cases
 
 ```bash
-pytest -v -s
+pytest
+```
+
+## 🎯 Run Specific Marker
+
+```bash
+pytest -m muhindhar
+pytest -m vigneshwaran
+pytest -m jerishwin
+pytest -m mythily
+pytest -m malavicka
+```
+
+## ⚡ Run Tests In Parallel
+
+```bash
+pytest -m (specific marker or file name) -n 4
 ```
 
 ## 📊 Generate HTML Report
 
 ```bash
-pytest --html=report.html --self-contained-html
+pytest --html=reports/HTMLReport.html --self-contained-html
+```
+
+## 🎭 Generate Allure Report
+
+```bash
+pytest --alluredir=reports/AllureReport
+```
+
+```bash
+allure serve reports/AllureReport
 ```
 
 ---
 
-# 🌟 Framework Highlights
+<div align="center">
 
-🚀 Page Object Model (POM)
+## 🚨 TEAM ERROR_404 🚨
 
-🚀 Reusable Actions
+### 🐞 Finding Bugs Before Users Do
 
-🚀 Data-Driven Testing
+### ⭐ If you like this project, don't forget to Star the Repository ⭐
 
-🚀 HTML Reporting
-
-🚀 Pytest Framework
-
-🚀 Scalable Framework Design
-
-🚀 Easy Maintenance
-
-🚀 Team Collaboration Using GitHub
-
----
-
-# 🔄 Version Control Strategy
-
-✅ Feature Branch Development
-
-✅ Pull Request Reviews
-
-✅ Code Review Process
-
-✅ GitHub Collaboration
-
----
-
-# 🔗 Repository
-
-🐙 GitHub Repository
-
-Python Automation Project
-
----
-
-# ❤️ Developed By
-
-## 🚨 Team ERROR_404 🚨
-
-### "Automating Today for a Better Tomorrow" 🚀
+</div>
