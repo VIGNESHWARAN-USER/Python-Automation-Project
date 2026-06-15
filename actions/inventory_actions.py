@@ -18,15 +18,10 @@ class Inventoryaction(BaseAction):
         try:
             logger.info("Clicking Inventory menu")
             elements = self.driver.find_elements(*self.side.inventory)
-
             logger.info(f"Inventory Elements Found: {len(elements)}")
-
             self.scroll_and_click(self.side.inventory)
-
         except Exception as e:
-            pytest.fail(
-            f"Unable to click Inventory menu. Error: {str(e)}"
-        )
+            pytest.fail(f"Unable to click Inventory menu. Error: {str(e)}")
 
     def check_stocklist(self):
         try:
@@ -88,9 +83,7 @@ def verify_csv_download(self):
 
     except Exception as e:
         self.take_screenshot("csv_download_failure")
-        pytest.fail(
-            f"CSV download verification failed. Error: {str(e)}"
-        )
+        pytest.fail(f"CSV download verification failed. Error: {str(e)}")
 
 def verify_pdf_download(self):
     try:
@@ -98,6 +91,4 @@ def verify_pdf_download(self):
 
     except Exception as e:
         self.take_screenshot("pdf_download_failure")
-        pytest.fail(
-            f"PDF download verification failed. Error: {str(e)}"
-        )
+        pytest.fail(f"PDF download verification failed. Error: {str(e)}")
