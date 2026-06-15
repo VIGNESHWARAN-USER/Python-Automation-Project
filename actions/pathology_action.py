@@ -51,83 +51,94 @@ class PathalogyAction(BaseAction):
         except Exception as e:
             logger.error(f"failed to handle invalid search: {str(e)}")
 
-    # payment    
-    def click_pay(self, billNo):
+    # payment
+    def search(self, billno):
+        self.send_keys(self.pp.search, str(billno))
+
+    def click_pay(self):
         try:
             self.wait.until(EC.element_to_be_clickable(self.pp.paybtn))
-            self.select_by_text(self.pp.paybtn, billNo)
+            self.click(self.pp.paybtn)
         except Exception as e:
             logger.error(f"failed to click pay button: {str(e)}")
 
     def enter_amount(self, amt):
         try:
-            return self.send_keys(self.pp.payAmt,amt)
+            field = self.wait.until(EC.visibility_of_element_located(self.pp.payAmt))
+            field.clear()                  
+            field.send_keys(str(amt)) 
         except Exception as e:
             logger.error(f"failed to enter amount: {str(e)}")
-                    
+
     def click_add(self):
         try:
-            self.click(self.pp.add)
+            self.wait.until(EC.element_to_be_clickable(self.pp.add)) 
+            self.js_click(self.pp.add) 
         except Exception as e:
             logger.error(f"failed to click add button: {str(e)}")
 
-    def ensure_makepay(self,driver):
+    def ensure_makepay(self):
         try:
-            self.click(self.pp.makepay)
-            self.driver.switch_to.frame(self.pp.frame)
+            self.wait.until(EC.element_to_be_clickable(self.pp.makepay))
+            self.js_click(self.pp.makepay)                              
+            self.wait.until(EC.frame_to_be_available_and_switch_to_it(self.pp.frame))
         except Exception as e:
-            logger.error(f"failed to click add button: {str(e)}")
+            logger.error(f"failed to click make payment: {str(e)}")
 
     def enter_mobile(self, mobile):
         try:
-            self.send_keys(self.pp.mobile, mobile)
+            self.wait.until(EC.visibility_of_element_located(self.pp.mobile))
+            self.send_keys(self.pp.mobile, str(mobile))
         except Exception as e:
-            logger.error(f"failed to click add button: {str(e)}")
+            logger.error(f"failed to enter mobile: {str(e)}")
 
     def click_continue(self):
         try:
-            self.click(self.pp.cont)
+            self.wait.until(EC.element_to_be_clickable(self.pp.cont))
+            self.js_click(self.pp.cont)
         except Exception as e:
             logger.error(f"failed to click continue button: {str(e)}")
 
     def choose_upi(self):
         try:
-            self.click(self.pp.upi)
+            self.wait.until(EC.element_to_be_clickable(self.pp.upi))
+            self.js_click(self.pp.upi)
         except Exception as e:
             logger.error(f"failed to click upi option: {str(e)}")
 
-    def send_upiId(self):
+    def send_upiId(self, upiId):
         try:
-            self.click(self.pp.makepay)
+            self.wait.until(EC.visibility_of_element_located(self.pp.email))
+            self.send_keys(self.pp.email, str(upiId))
         except Exception as e:
-            logger.error(f"failed to click add button: {str(e)}")
+            logger.error(f"failed to enter UPI ID: {str(e)}")
 
     def click_verify(self):
         try:
-            self.click(self.pp.verify)
+            self.wait.until(EC.element_to_be_clickable(self.pp.verify))
+            self.js_click(self.pp.verify)
         except Exception as e:
             logger.error(f"failed to click verify button: {str(e)}")
 
-    def get_success_txt(self,driver):
+    def get_success_txt(self):
         try:
             self.driver.switch_to.default_content()
         except Exception as e:
             logger.error(f"Already on main page: {str(e)}")
         try:
+            longwait = WebDriverWait(self.driver, 30)
+            longwait.until(EC.visibility_of_element_located(self.pp.succ))
             return self.get_text(self.pp.succ)
         except Exception as e:
             logger.error(f"Success message not found on page: {str(e)}")
 
-    def get_pay_error_txt(self, driver):
+    def get_pay_error_txt(self):
         try:
             return self.get_text(self.pp.payError)
         except TimeoutException:
             page_source = self.driver.page_source
-            has_exceed = "Amount Should Not Be Greater Than Balance" in page_source
-            has_invalid = "Invalid Amount" in page_source
-            if has_exceed:
+            if "Amount Should Not Be Greater Than Balance" in page_source:
                 return "Amount Should Not Be Greater Than Balance"
-            if has_invalid:
-                return "Invalid Amount"
-            return ""      
-                                           
+            if "Invalid Amount" in page_source:
+                return "Invalid Amount."
+            return ""

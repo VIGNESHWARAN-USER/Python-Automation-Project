@@ -19,7 +19,7 @@ class PathalogyPage:
     verify = (By.XPATH, "//button[contains(normalize-space(),'Verify') or contains(normalize-space(),'Pay') or contains(normalize-space(),'verify')]")
     succ = (By.XPATH, "//div[@class='alert alert-success alert-dismissible']")
     payError = (By.XPATH, "//*[contains(text(),'Amount Should Not Be Greater Than Balance')] | " + "//*[contains(text(),'Invalid Amount')]")
-    frame = (By.tagName,"iframe")
+    frame = (By.TAG_NAME,"iframe")
 
     def get_record_locator(self, billNo):
         xpath = f"//tr/td[contains(text(), '{billNo}')]"
