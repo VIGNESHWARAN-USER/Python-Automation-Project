@@ -23,7 +23,7 @@ class Testsuperadmin:
         lp.click_login_button()
         assert sa.ipd()
 
-    @pytest.mark.dependency(name="pharmacy", depends=["ipd"])
+    '''@pytest.mark.dependency(name="pharmacy", depends=["ipd"])
     @pytest.mark.skip(reason="skipping due to the project is under development")
     @pytest.mark.parametrize("medicalname,composition,minlevel,reorderlevel,tax,vatac,racknumber,boxpacking,note",excelreader.get_data("medicallist.xlsx", "Sheet1"),)
     def test_pharmacy(self,medicalname,composition,minlevel,reorderlevel,tax,vatac,racknumber,boxpacking,note,):
@@ -33,7 +33,7 @@ class Testsuperadmin:
         lp.click_login("Super Admin")
         lp.click_login_button()
 
-        assert sa.medicine_details(medicalname,composition,minlevel,reorderlevel,tax,vatac,racknumber,boxpacking,note,)
+        assert sa.medicine_details(medicalname,composition,minlevel,reorderlevel,tax,vatac,racknumber,boxpacking,note,)'''
 
     @pytest.mark.dependency(name="pathology", depends=["ipd"])
     def test_pathology(self):
