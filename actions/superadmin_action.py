@@ -5,6 +5,7 @@ from pages.sidebar_page import SideBarPage
 import pytest
 
 logger = get_logger()
+
 class Superadminaction(BaseAction):
 
     def __init__(self, driver):
