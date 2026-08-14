@@ -19,3 +19,4 @@ class SideBarPage:
     messaging = (By.XPATH,"//li[contains(@class ,'treeview')][16]")
     inventory = (By.XPATH,"//a[@href='https://demo.smart-hospital.in/admin/itemstock']")
     humanRes = (By.XPATH,"//a[@href=\"https://demo.smart-hospital.in/admin/staff\"]/span[text()='Human Resource']")
+    bloodbank = (By.XPATH,"//a[@href='https://demo.smart-hospital.in/admin/bloodbankstatus/']")
