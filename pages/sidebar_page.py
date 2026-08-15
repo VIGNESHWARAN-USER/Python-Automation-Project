@@ -2,8 +2,8 @@ from selenium.webdriver.common.by import By
 
 class SideBarPage:
     
-    live_consultation = (By.XPATH, "//li[contains(@class ,\"treeview\")][19]")
-    live_consultation_option = (By.XPATH, "//li[contains(@class ,\"treeview\")][19]/ul/li/a")
+    live_consultation = (By.XPATH, "//li[contains(@class,\"nav-item\")][19]")
+    live_consultation_option = (By.XPATH, "//li[contains(@class,\"nav-item\")][19]/ul/li/a")
     pathlogyMenu = (By.XPATH, "//a[normalize-space()='Pathology']")
     message = (By.XPATH,"//a[@href=\"https://demo.smart-hospital.in/admin/notification\"]/child::span");
     appointmentbtn = (By.XPATH, "//ul[@class='sidebar-menu verttop']/li[@class='treeview active']/following-sibling::li[3]/child::a/child::i")

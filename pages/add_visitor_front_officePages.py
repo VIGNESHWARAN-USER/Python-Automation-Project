@@ -5,7 +5,7 @@ from pages.sidebar_page import SideBarPage
 class AddVisitor:
     recpbtn = (By.XPATH,"//a[normalize-space()='Receptionist']")
     signinbtn = (By.XPATH,"//button[@type='submit']")
-    frontoffice = (By.XPATH,"//span[normalize-space()='Front Office']")
+    frontoffice = (By.XPATH,"//li//a//span[text() = 'Front Office']")
     addvisitorbtn = (By.XPATH,"//a[@class='btn btn-primary btn-sm addvisitor']")
     purpose = (By.XPATH,"//form[@id='formadd']//select[@name='purpose']")
     name = (By.XPATH,"//form[@id='formadd']//input[@name='name']")
