@@ -6,7 +6,7 @@ class LoginPage:
     sign_in_button = (By.XPATH, "//button[@type='submit']")
     super_admin = (By.XPATH, "//a[text() = \"Super Admin\"]")
     admin = (By.XPATH, "//a[text() = \"Admin\"]")
-    doctor = (By.XPATH, "//a[text() = \"Doctor\"]")
+    doctor = (By.XPATH, "//button[normalize-space()='Doctor']")
     pharmacist = (By.XPATH, "//a[text() = \"Pharmacist\"]")
     pathologist = (By.XPATH, "//a[text() = \"Pathologist\"]")
     radiologist = (By.XPATH, "//a[text() = \"Radiologist\"]")
