@@ -5,7 +5,7 @@ class ComplaintFoPages:
 
     recbtnfo = (By.XPATH, "//a[normalize-space()='Receptionist']")
     signinfo = (By.XPATH, "//button[@type='submit']")
-    frontofc = (By.XPATH, "//span[text()='Front Office']")
+    frontofc = (By.XPATH, "//li//a//span[text() = 'Front Office']")
     complaint = (By.XPATH, "//a[contains(text(),'Complain')]")
     addcomp = (By.XPATH, "//a[contains(@class,'complain')]")
     comtype = (By.XPATH, "//select[@name='complaint']")
