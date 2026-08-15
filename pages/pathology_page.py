@@ -2,13 +2,13 @@ from selenium.webdriver.common.by import By
 
 class PathalogyPage:
     
-    pathlogyMenu = (By.XPATH, "//a[normalize-space()='Pathology']")
-    search = (By.XPATH, "//input[@type='search' or @placeholder='Search...']")
+    pathlogyMenu = (By.XPATH, "//li[@class]/a[normalize-space()='Pathology']")
+    search = (By.XPATH, "//div/*/input[@type='search' or @placeholder='Search...']")
     filter = (By.XPATH, "//div[text()='Records: 1 to 1 of 1 (filtered from 14 total records)']")
-    table = (By.XPATH, "//table//tr")
+    table = (By.XPATH, "//table/tbody/tr")
     notFound = (By.XPATH, "//tr[@class='odd']//td[text()='No matching records found']")
 
-    paybtn = (By.XPATH, "//td[contains(@class,'text-right')]//button[contains(@onclick,'payModal')]")
+    paybtn = (By.XPATH, "//table/tbody/tr/td/div/button[@type='button']")
     payAmt = (By.XPATH, "//input[@id='amount_total_paid']")
     add = (By.XPATH, "//div[@class='modal-footer']//button[@id='pay_button']")
     makepay = (By.XPATH, "//button[normalize-space()='Make Payment']")

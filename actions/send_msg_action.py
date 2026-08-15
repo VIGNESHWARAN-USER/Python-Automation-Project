@@ -14,7 +14,7 @@ class SendMsgAction(BaseAction):
 
     def click_msg(self):
         try:
-            self.click(self.sp.messaging)
+            self.click(self.sp.message)
             logger.info("Clicked Messaging menu successfully")
         except Exception as e:
             logger.error(f"failed to click the messaging menu: {str(e)}")

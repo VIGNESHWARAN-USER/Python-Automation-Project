@@ -8,7 +8,7 @@ class LoginPage:
     admin = (By.XPATH, "//a[text() = \"Admin\"]")
     doctor = (By.XPATH, "//a[text() = \"Doctor\"]")
     pharmacist = (By.XPATH, "//a[text() = \"Pharmacist\"]")
-    pathologist = (By.XPATH, "//a[text() = \"Pathologist\"]")
+    pathologist = (By.XPATH, "//a[normalize-space()='Pathologist'] | //button[normalize-space()='Pathologist']")
     radiologist = (By.XPATH, "//a[text() = \"Radiologist\"]")
     accountant = (By.XPATH, "//a[text() = \"Accountant\"]")
     receptionist = (By.XPATH, "//a[text() = \"Receptionist\"]")
