@@ -141,6 +141,16 @@ class JoinConsultationAction(BaseAction):
             self.logger.error(f"Failed to get toast message: {str(e)}")
             raise
 
+    def get_failure_toast_message(self):
+            try:
+                self.logger.info("Getting failure toast message")
+                return self.get_text(
+                    self.jp.failure_toast_message
+                )
+            except Exception as e:
+                self.logger.error(f"Failed to get falure toast message: {str(e)}")
+                raise
+
     def get_zoom_api_key_value(self):
         try:
             self.logger.info("Getting Zoom API Key value")

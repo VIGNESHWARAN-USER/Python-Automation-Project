@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 class JoinConsultationPage:
     table_body = (By.XPATH, "//div/table/tbody/tr")
     popup = (By.XPATH, "//div[@id = 'modal-chkstatus']")
-    start_now = (By.XPATH,"//a[contains(@href , 'zoom') and @class = 'btn btn-outline-success btn-sm pull-right']")
+    start_now = (By.XPATH,"//a[contains(@href , 'zoom') and contains(@class , 'join-btn')]")
     add_button = (By.XPATH,"//div[@class = 'box-tools pull-right box-tools-md']/button[1]")
     patient_name = (By.XPATH,"//select[@id = 'addpatient_id']/following-sibling::span/span/span/span[2]")
     first_patient_option = (By.XPATH,"//span[@class = 'select2-results']/ul/li[1]")
@@ -13,11 +13,12 @@ class JoinConsultationPage:
     duration = (By.CSS_SELECTOR,"input#duration")
     ipd_or_opd = (By.XPATH,"//select[@class = 'form-control module_type']")
     description = (By.CSS_SELECTOR,"textarea#description")
-    add_credential_button = (By.XPATH,"//div[@class = 'box-tools pull-right box-tools-md']/button[2]")
+    add_credential_button = (By.XPATH,"//h3[contains(text(), 'Live Consult')]/following-sibling::div/button[2]")
     zoom_api_key_field = (By.XPATH,"//input[@id = 'zoom_api_key']")
     zoom_api_secret_field = (By.XPATH,"//input[@id = 'zoom_api_secret']")
     save_credential_button = (By.XPATH,"//button[@id = 'submit-btn-credential'][2]")
-    success_toast_message = (By.XPATH,"//div[@class = 'toast-message']")
+    success_toast_message = (By.XPATH,"//div[@class = 'sh-bubble-msg']")
+    failure_toast_message = (By.XPATH, "//h4[text() = 'Error']")
     save_consultation_button = (By.XPATH,"//div[@class = 'pull-right mrminus8']/button[@class = 'btn btn-primary']")
 
     def get_status_dropdown(self, rowIndex):
@@ -25,5 +26,5 @@ class JoinConsultationPage:
     
 
     def get_action_buttons(self, rowIndex):
-        return (By.XPATH, "//tbody/tr[" + str(rowIndex) + "]/td[9]/a")
+        return (By.XPATH, "//tbody/tr[" + str(rowIndex) + "]/td[9]/div/a")
     
