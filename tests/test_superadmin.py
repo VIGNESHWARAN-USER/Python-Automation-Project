@@ -7,7 +7,7 @@ import utilities.excel_reader as excelreader
 @pytest.mark.usefixtures("setup_and_teardown")
 class Testsuperadmin:
 
-    @pytest.mark.dependency(name="opd")
+    #@pytest.mark.dependency(name="opd")
     def test_opd(self):
         lp = LoginAction(self.driver)
         sa = Superadminaction(self.driver)
